@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TriviaXamarinApp.Views.AddQuestion">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Label Text="Question text: "></Label>
+            <Entry Text="{Binding EntryQText}"></Entry>
+            <Label Text="Correct answer: "></Label>
+            <Entry Text="{Binding EntryCorrectAns}"></Entry>
+            <Label Text="Other answer: "></Label>
+            <Entry Text="{Binding EntryOtherAns1}"></Entry>
+            <Label Text="Other answer: "></Label>
+            <Entry Text="{Binding EntryOtherAns2}"></Entry>
+            <Label Text="Other answer: "></Label>
+            <Entry Text="{Binding EntryOtherAns3}"></Entry>
+                <Button Text="Add" BackgroundColor="DarkTurquoise" Command="{Binding Path=AddQuestionCommand}"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

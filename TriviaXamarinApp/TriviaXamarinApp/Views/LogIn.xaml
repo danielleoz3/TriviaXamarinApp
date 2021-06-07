@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TriviaXamarinApp.Views.LogIn">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Email: "></Label>
+            <Entry Text="{Binding EntryEmail}"></Entry>
+            <Label Text="Password: "></Label>
+            <Entry Text="{Binding EntryPass}" IsPassword="True"></Entry>            
+            <Button Text="Login" BackgroundColor="DarkTurquoise" Command="{Binding Path=LogInCommand}"></Button>
+            <Button Text="Go to register" BackgroundColor="DarkTurquoise" Command="{Binding Path=RegisterCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TriviaXamarinApp.Views.HomePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="LOGOUT" HorizontalOptions="End" VerticalOptions="Start" TextColor="DarkTurquoise" FontAttributes="Bold" BackgroundColor="Transparent" Command="{Binding Path=LogOutCommand}" IsVisible="{Binding ShowLogout}"></Button>
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Text="Correct answers:" FontSize="Medium"></Label>
+                <Label Text="{Binding CounterCorrectAnswers}" FontSize="Medium"></Label>
+            </StackLayout>
+            <Label Text="{Binding CurrentAmericanQuestion.QText}" FontSize="Medium" Margin="0,0,0,5"></Label>
+            <CollectionView ItemsSource="{Binding CurrentAnswers}" SelectionMode="Single" SelectionChangedCommand="{Binding Path=SelectionQuestionCommand}" SelectedItem="{Binding SelectedAnswer, Mode=TwoWay}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

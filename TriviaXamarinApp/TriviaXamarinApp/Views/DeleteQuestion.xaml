@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TriviaXamarinApp.Views.DeleteQuestion">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+            <CollectionView x:Name="collectionName" 
+                            ItemsSource="{Binding UserQuestions}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="Delete"
+                                           IconImageSource="delete.png"
+                                           BackgroundColor="LightPink"
+                                           Command="{Binding Source={x:Reference collectionName}, Path=DeleteQuestionCommand}"
+                                           CommandParameter="{Binding}" />
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Label Text="{Binding QText}"></Label>
+                        </SwipeView>-->
+                        <Grid>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="{Binding QText}" VerticalTextAlignment="Center"/>
+                            <Button Grid.Column="1" Command="{Binding Source={x:Reference collectionName}, Path=BindingContext.DeleteQuestionCommand}"
+                                                    CommandParameter="{Binding}"
+                                                    ImageSource="delete.png"
+                                                    BackgroundColor="Transparent"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
